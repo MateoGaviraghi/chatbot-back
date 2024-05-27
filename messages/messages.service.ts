@@ -9,7 +9,8 @@ import { Chat } from 'src/entities/chat.entity';
 export class MessagesService {
   constructor(
     @InjectRepository(Message)
-    private messagesRepository: Repository<Message>,
+    private readonly messagesRepository: Repository<Message>,
+    @InjectRepository(Chat)
     private readonly chatRepository: Repository<Chat>,
   ) {}
 
