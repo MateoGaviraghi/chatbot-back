@@ -8,6 +8,9 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MessagesModule } from './messages/messages.module';
 import { UsersModule } from './users/users.module';
 import typeOrmConfig from '../config/typeorm';
+import { UsersService } from './users/users.service';
+import { MessagesService } from './messages/messages.service';
+import { MessageGateway } from './messages/messages.gateway';
 
 @Module({
   imports: [
@@ -29,5 +32,6 @@ import typeOrmConfig from '../config/typeorm';
 
     UsersModule,
   ],
+  providers: [UsersService, MessagesService, MessageGateway],
 })
 export class AppModule {}
